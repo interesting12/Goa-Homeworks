@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="checkAge()">დააჭირეთ აქ</button>
+
+
+    <script>
+        function checkAge() {
+            const isAdult = confirm("თქვენ ზრდასრული ხართ (18 წლის ზემოთ)?");
+        
+            if (isAdult) {
+                alert("You are adult.");
+            } else {
+                alert("You are kid.");
+            }
+        }
+    </script>
+</body>
+</html>
+

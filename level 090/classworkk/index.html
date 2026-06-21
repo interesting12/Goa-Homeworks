@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Example</title>
+  <style>
+    body{
+    display: flex;
+    justify-content: center;
+        
+
+    }
+    #card-container{
+        margin: 50px;
+    }
+    .card:hover{
+        transform: translateY(-20px);
+   
+
+    }
+    .card {
+    transition: transform 0.4s ease;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      margin: 20px;
+      margin-top: 50px;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+    .card-body {
+      padding: 16px;
+    }
+    .card-title {
+      font-size: 1.5em;
+      margin: 0 0 8px;
+    }
+    .card-text {
+      font-size: 1em;
+      color: #666;
+    }
+
+    .buttons {
+      margin-bottom: 20px;
+    }
+    .buttons button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+        <div class="buttons">
+            <button onclick="filterCards('all')">All</button>
+            <button onclick="filterCards('low')">Under $200</button>
+            <button onclick="filterCards('medium')">$200 - $300</button>
+            <button onclick="filterCards('high')">+ $300</button>
+          </div>
+    <main>
+        <div id="card-container"></div>
+    </main>
+
+
+<script>
+  const cardsData = [
+    { title: 'Card 1', text: 'This is the first card.',  price: '$300',  imageUrl: 'https://cdn.pixabay.com/photo/2014/07/31/23/00/wristwatch-407096_640.jpg' },
+    { title: 'Card 2', text: 'This is the second card.', price: '$500',  imageUrl: 'https://cdn.pixabay.com/photo/2022/12/14/16/10/ediffice-7655723_640.jpg' },
+    { title: 'Card 3', text: 'This is the third card.',  price: '$250',  imageUrl: 'https://cdn.pixabay.com/photo/2016/11/21/13/58/analog-watch-1845547_640.jpg'  },
+    { title: 'Card 4', text: 'This is the fourth card.', price: '$400',  imageUrl: 'https://cdn.pixabay.com/photo/2016/02/26/17/30/watch-1224379_640.jpg' },
+    { title: 'Card 5', text: 'This is the fourth card.', price: '$250',  imageUrl: 'https://cdn.pixabay.com/photo/2014/01/12/03/38/watch-242592_640.jpg' },
+    { title: 'Card 6', text: 'This is the fourth card.', price: '$200',  imageUrl: 'https://cdn.pixabay.com/photo/2017/03/23/08/56/clock-2167729_640.jpg' },
+    { title: 'Card 7', text: 'This is the fourth card.', price: '$100',  imageUrl: 'https://cdn.pixabay.com/photo/2017/12/14/22/41/wrist-watch-3019913_640.jpg' },
+    { title: 'Card 8', text: 'This is the fourth card.', price: '$350',  imageUrl: 'https://cdn.pixabay.com/photo/2016/09/16/14/10/time-1674107_640.jpg' },
+    { title: 'Card 9', text: 'This is the fourth card.', price: '$450',  imageUrl: 'https://cdn.pixabay.com/photo/2016/10/30/16/13/wrist-watch-1783545_640.jpg' },
+    { title: 'Card 10', text: 'This is the fourth card.', price: '$300',  imageUrl: 'https://cdn.pixabay.com/photo/2022/08/29/15/11/clock-7419071_640.jpg' },
+    { title: 'Card 11', text: 'This is the fourth card.', price: '$150',  imageUrl: 'https://cdn.pixabay.com/photo/2013/09/30/21/58/male-watch-188782_640.jpg' },
+    { title: 'Card 12', text: 'This is the fourth card.', price: '$700',  imageUrl: 'https://cdn.pixabay.com/photo/2016/03/05/09/03/wrist-watch-1237417_640.jpg' }
+
+    
+  ];
+
+  function createCard(title, text, price, imageUrl) {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.style.width = "300px"
+    img.style.height = "200px"
+    card.appendChild(img);
+
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
+
+    const cardTitle = document.createElement('h2');
+    cardTitle.className = 'card-title';
+    cardTitle.textContent = title;
+    cardBody.appendChild(cardTitle);
+
+
+
+    const cardText = document.createElement('p');
+    cardText.className = 'card-text';
+    cardText.textContent = text;
+    cardBody.appendChild(cardText);
+
+   
+    const cardPrice = document.createElement('p');
+    cardPrice.className = 'card-price';
+    cardPrice.textContent = `${text} Price: $${price}`;
+    cardBody.appendChild(cardPrice);
+
+    card.appendChild(cardBody);
+    document.getElementById('card-container').appendChild(card);
+  }
+
+  for (let i = 0; i < cardsData.length; i++) {
+    createCard(cardsData[i].title, cardsData[i].text, cardsData[i].price,  cardsData[i].imageUrl);
+  }
+
+
+
+
+  function displayCards(cards) {
+    const container = document.getElementById('card-container');
+    container.innerHTML = '';
+    cards.forEach(card => createCard(card.title, card.text, card.price, card.imageUrl));
+  }
+
+  function filterCards(range) {
+    let filteredCards;
+    if (range === 'low') {
+      filteredCards = cardsData.filter(card => card.price < 200);
+    } else if (range === 'medium') {
+      filteredCards = cardsData.filter(card => card.price >= 200 && card.price <= 300);
+    } else if (range === 'high') {
+      filteredCards = cardsData.filter(card => card.price > 300);
+    } else {
+      filteredCards = cardsData;
+    }
+    displayCards(filteredCards);
+  }
+
+  displayCards(cardsData);
+</script>
+
+</body>
+</html>

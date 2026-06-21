@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 7px 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="name-entry">
+        <h1>Welcome!</h1>
+        <p>Please enter your name:</p>
+        <input type="text" id="user-name" placeholder="Your name">
+        <button onclick="saveName()">Submit</button>
+    </div>
+
+    <div id="game" style="display: none;">
+        <h1>Welcome, <span id="display-name"></span>!</h1>
+        <div>
+            <p>Your score: <span id="score">0</span></p>
+            <label for="color-picker">Pick a background color:</label>
+            <input type="color" id="color-picker" onchange="changeBackground()">
+        </div>
+
+        <div>
+            <p>Guess the number between <span id="range-min">1</span> and <span id="range-max">2</span>:</p>
+            <input type="number" id="guess-input">
+            <button onclick="checkGuess()">Submit Guess</button>
+        </div>
+    </div>
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>

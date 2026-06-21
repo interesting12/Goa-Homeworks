@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Jokes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <p id="joke">Loading joke...</p>
+        <button onclick="joke()">Get Another Joke</button>
+    </div>
+
+    <script src="script.js">
+    async function joke() {
+    try{
+        let resp = await fetch('https://v2.jokeapi.dev/joke/Any?safe-mode')
+        if(!resp.ok){
+            throw new Error('error')
+        }
+        let data = await resp.json()
+        let p = document.getElementById('joke');
+        if(data.type === "single"){
+            p.innerHTML = data.joke;
+        }else {
+            p.innerHTML = `setip: ${data.setup} <br> delivery: ${data.delivery}`;
+        }
+    } catch(err) {
+        console.error(err)
+    }
+    
+}
+joke()
+    </script>
+
+</body>
+</html>

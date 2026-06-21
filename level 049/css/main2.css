@@ -1,0 +1,172 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.body{
+    background-image: url(../img/bg.png);
+    background-size: 80%;
+    /* background: 100vh; */
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+@keyframes slideInUp{
+    from{
+        transform: translateY(100px);
+
+    }
+    
+
+    to {
+        transform: translateX(0);
+    }
+    
+}
+@keyframes slideInDown{
+    from{
+        transform: translateY(-50px);
+
+    }
+    
+
+    to {
+        transform: translateX(0);
+}
+}
+section{
+    display: flex;
+    justify-content: center;
+}
+.hello, h3, .about{
+    animation: slideInUp 1s ease-in 0s 1 normal both;
+    position: relative;
+    top:250px;
+    text-align: center;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+  
+}
+ /*.welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+} */
+.hello{
+    font-weight: 900;
+    font-size: 45px;
+}   
+.about{
+    font-weight: 100;
+}
+h3{
+    font-size: 30px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.btn{
+    animation: slideInUp 1s ease-in 0s 1 normal both;
+    border: none;
+    background: transparent;
+    position: relative;
+    top: 300px;
+    left: 220px;
+    cursor: pointer;
+    border-radius: 90px;
+    margin: 0;
+    padding: 0;
+}
+.btn:hover{
+    background-color: #fa7d2a;
+}
+.categ{
+    animation: slideInUp 1s ease-in 0s 1 normal both;
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    position: relative;
+    top: 450px;
+    right: 70px;
+
+}
+.categ img{
+    max-width: 200px;
+    max-height: 150px;
+   
+
+}
+
+.shirt:hover{
+    max-width: 300px;
+    max-height: 300px;
+
+}
+
+.clothes{
+    display: flex;
+    
+    justify-content: center;
+    text-align: center;
+    
+    
+
+}
+.cl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 120px;
+    color: #d9ff00;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    transition: 2s;
+}
+
+
+
+
+
+.bgimg{
+ 
+   justify-content: center;
+   align-items: center;
+    background-color: #c2b2b2;
+    border: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 400px;
+    z-index: -999;
+}
+.bg{
+    width: 100%;
+    height: 100px;
+    z-index: -999;
+}
+.shirt{
+    max-width:200px;
+}
+.cap{
+    max-width: 200px;
+}
+
+.btn1{
+    position: relative;
+    top: 450px;
+    left: 45%;
+    padding: 10px 30px;
+    border-radius: 15px;
+    background-color: #462e02;
+    color: #fff;
+    cursor: pointer;
+}
+.btn1:hover{
+    background-color: #000;
+
+}

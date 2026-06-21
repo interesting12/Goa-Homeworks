@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        p {
+            margin-top: 250px;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="timer">20</p>
+
+    <script>
+        let timeLeft = 20;
+        const Paragraph = document.getElementById('timer');
+
+        const countdown = setInterval() = {
+            Paragraph.textContent = timeLeft; 
+            timeLeft--;
+
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                Paragraph.textContent = "დასრულდა!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <p id="paragraph" style="color: rgb(67, 87, 241); background-color: rgb(135, 223, 72); font-weight: bold; font-size: 18px;">
+        Hello World
+    </p>
+
+    <script>
+        var paragraph = document.getElementById("paragraph");
+
+        var paragraphStyles = {
+            color: paragraph.style.color,
+            bgColor: paragraph.style.backgroundColor,
+            fontWeight: paragraph.style.fontWeight,
+            fontSize: paragraph.style.fontSize
+        };
+
+        console.log(paragraphStyles);
+    </script>
+
+</body>
+</html>

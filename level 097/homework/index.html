@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtered Emails</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="emails-input">
+              <h1> Emails Filter</h1>
+              <label for="filter">Select a subject to filter:</label>
+              <select id="filter">
+                <option value="">-- Select Subject --</option>
+                <option value="მოგზაურობა">მოგზაურობა</option>
+                <option value="მოხსენება">მოხსენება</option>
+                <option value="გაცნობიერება">გაცნობიერება</option>
+              </select>
+              <button id="applyFilter">Filter</button>
+            </div>
+            <div class="emails-output">
+              <h2>Filtered Emails</h2>
+              <ul id="emailList"></ul>
+            </div>
+          </div>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

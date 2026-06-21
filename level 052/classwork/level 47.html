@@ -1,0 +1,39 @@
+<!-- შექმენით div ბლოკი რომელსაც 
+ hover-ისას transform-ის კუთვნილებით შეუცვლით პოზიციას. 
+ გამოიყენეთ ნასწავლი სუბ-კუთვნილებები: translate,scale,rotate,trasnform-origin -->`
+
+
+ <!-- div ბლოკზე active მდგომარეობისას მოახდინეთ ერთი transform
+   რომელზეც გამოიყენებთ: translate(x,y),scale(ratio),rotate(degrees),
+   skew(degX,degY),transform-origin-ის უარყოფით მნიშვნელობებს -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+        }
+        div:hover{
+            background-color: beige;
+            /* transform: rotateY(50deg);
+            transform: translate(50px, 20px);
+            transform-origin: 100px 50px;*/ 
+            /* transform: scale(2);  */
+            transform: skew(30deg, 10deg);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>hello</h1>
+        <button>click me</button>
+    </div>
+</body>
+</html>

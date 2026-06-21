@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Counters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #edcf4a;
+        }
+
+        .counter {
+            border: 2px solid #000000;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            background-color: #2893e0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .counter h2 {
+            margin: 10px 0;
+        }
+        .counter p {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .counter button, .counter input {
+
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+            button {
+                margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #69b71a;
+            border: none;
+            border-radius: 5px;
+        }
+        .counter button:hover{
+            background-color: rgb(71, 238, 238);
+        }
+        .lock-checkbox {
+            margin: 10px 0;
+        }
+        .locked {
+            pointer-events: none;
+          
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Dynamic Counters</h1>
+    <button id="addCounter">Add Counter</button>
+    <section>
+        <div id="container"></div>
+    </section>
+
+    <script>
+        const container = document.getElementById('container');
+        const addCounterButton = document.getElementById('addCounter');
+
+        let counterId = 0;
+
+        addCounterButton.addEventListener('click', () => {
+            counterId++;
+            const counterDiv = document.createElement('div');
+            counterDiv.className = 'counter';
+            counterDiv.id = `counter-${counterId}`;
+
+            counterDiv.innerHTML = `
+                <h2>Counter ${counterId}</h2>
+                <p id="display-${counterId}">0</p>
+                
+                <input type="number" id="step-${counterId}" value="1" min="1" max="100">
+                <button id="up-${counterId}">+</button>
+                <button id="down-${counterId}">-</button>
+                <button id="reset-${counterId}">Reset</button>
+                <button id="undo-${counterId}">Undo</button>
+                <button id="redo-${counterId}">Redo</button>
+                <div>
+                <div class="lock-checkbox">
+                    <label>
+                        <input type="checkbox" id="lock-${counterId}"> Lock
+                    </label>
+                </div>
+                </div>
+            `;
+
+            container.appendChild(counterDiv);
+
+            let count = 0;
+            let lastAction = 0;
+            let previousValue = 0;
+
+            const display = document.getElementById(`display-${counterId}`);
+            const up = document.getElementById(`up-${counterId}`);
+            const down = document.getElementById(`down-${counterId}`);
+            const reset = document.getElementById(`reset-${counterId}`);
+            const undo = document.getElementById(`undo-${counterId}`);
+            const redo = document.getElementById(`redo-${counterId}`);
+            const lockCheckbox = document.getElementById(`lock-${counterId}`);
+            const stepInput = document.getElementById(`step-${counterId}`);
+
+            const updateDisplay = () => {
+                display.textContent = count;
+            };
+
+            const lock = () => {
+                const isLocked = lockCheckbox.checked;
+                counterDiv.classList.toggle('locked', isLocked);
+            };
+            up.addEventListener('click', () => {
+                if (!lockCheckbox.checked) {
+                    const step = parseInt(stepInput.value, 10) || 1;
+                    previousValue = count;
+                    count += step;
+                    lastAction = 'up';
+                    updateDisplay();
+                }
+            });
+
+            down.addEventListener('click', () => {
+                if (!lockCheckbox.checked) {
+                    const step = parseInt(stepInput.value, 10) || 1;
+                    previousValue = count;
+                    count -= step;
+                    lastAction = 'down';
+                    updateDisplay();
+                }
+            });
+
+            reset.addEventListener('click', () => {
+                if (!lockCheckbox.checked) {
+                    previousValue = count;
+                    count = 0;
+                    lastAction = 'reset';
+                    updateDisplay();
+                }
+            });
+
+            undo.addEventListener('click', () => {
+                if (!lockCheckbox.checked && previousValue !== 0) {
+                    const temp = count;
+                    count = previousValue;
+                    previousValue = temp;
+                    updateDisplay();
+                }
+            });
+
+            redo.addEventListener('click', () => {
+                if (!lockCheckbox.checked && lastAction === 'reset') {
+                    count = 0;
+                    updateDisplay();
+                }
+            });
+
+            lockCheckbox.addEventListener('change', lock);
+    
+        });
+    </script>
+</body>
+</html>

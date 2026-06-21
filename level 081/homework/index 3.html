@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Size Animation</title>
+  <style>
+    #text {
+      font-size: 20px;
+      transition: font-size 1s;
+    }
+  </style>
+</head>
+<body>
+  <button id="textBtn">Animate Text</button>
+  <div id="text">Animated Text</div>
+  <script>
+    const text = document.getElementById("text");
+    let isBig = false;
+
+    document.getElementById("textBtn").addEventListener("click", () => {
+      text.style.fontSize = isBig ? "20px" : "40px";
+      isBig = !isBig;
+    });
+  </script>
+</body>
+</html>

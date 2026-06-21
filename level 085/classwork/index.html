@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Divs</title>
+    <style>
+        .div {
+            border: 2px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+        .stop {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="div"></div>
+    <script>
+        function createDivs(parent, depth) {
+            if (depth > 5) return;
+
+            const newDiv = document.createElement('div');
+            newDiv.classList.add('div');
+            newDiv.textContent = `Level ${depth}`;
+
+            // Check if depth is even
+            if (depth % 2 === 0) {
+                newDiv.classList.add('stop');
+                parent.appendChild(newDiv);
+                return; // Stop propagation for even levels
+            }
+
+            parent.appendChild(newDiv);
+            createDivs(newDiv, depth + 1); // Continue for odd levels
+        }
+
+        const container = document.getElementById('container');
+        createDivs(container, 1);
+    </script>
+</body>
+</html>

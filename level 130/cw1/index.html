@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="func()">Get Random Dog</button>
+    <img id="dogimg" src="" alt="">
+    
+<script>
+ async function func() {
+    try{
+        let resp = await fetch('https://dog.ceo/api/breeds/image/random')
+        if(!resp.ok){
+            throw new Error('error')
+        }
+        let data = await resp.json()
+        let img = document.getElementById('dogimg');
+        img.src = data.message;
+        return(data)
+    } catch(err) {
+        console.error(err)
+    }
+    
+}
+</script>
+</body>
+</html>

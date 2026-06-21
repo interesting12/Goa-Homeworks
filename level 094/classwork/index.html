@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes example {
+            0%   {background-color: red;}
+            20% {background-color: rgb(211, 130, 0);}
+            40%  {background-color: yellow;}
+            60% {background-color: green;}
+            80% {background-color: blue;}
+            100%{background-color: rgb(204, 0, 255);} 
+
+        }
+
+        body {
+            position: relative;
+            top: 250px;
+            left: 680px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: example;
+            animation-duration: 5s;
+        }
+
+        div{
+            background-color: black;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            
+            padding: 5px 15px;
+            cursor: pointer;
+
+        }
+
+        button:hover{
+            background-color: red;
+            animation-name: example;
+            animation-duration: 5s;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <button>Click me</button>
+    </div>
+</body>
+</html>

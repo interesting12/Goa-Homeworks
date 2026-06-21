@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter 2</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #e8fdc3;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        section{
+            margin-left: 550px;
+            border: 2px solid;
+            width: 400px;
+            height: 400px;
+            background-color: #00a7e9;
+        }
+        #counter {
+            font-size: 48px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid black;
+            display: inline-block;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .positive {
+            background-color: lightgreen;
+            color: green;
+        }
+        .negative {
+            background-color: lightcoral;
+            color: red;
+        }
+        .neutral {
+            background-color: lightgray;
+            color: black;
+        }
+
+        #btn-s button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        #btn-s button:hover {
+            transform: scale(1.1);
+        }
+        #up {
+            background-color: green;
+            color: white;
+        }
+        #up:hover {
+            background-color: darkgreen;
+        }
+        #down {
+            background-color: red;
+            color: white;
+        }
+        #down:hover {
+            background-color: darkred;
+        }
+        #reset {
+            background-color: gray;
+            color: white;
+        }
+        #reset:hover {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Counter 2</h1>
+        <div>
+            <p><span id="counter" class="neutral">0</span></p>
+            <input type="number" id="inp" value="1" min="1" max="100">
+            <div id="btn-s">
+                <button id="up">+</button>
+                <button id="down">-</button>
+                <button id="reset">Reset</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const counter = document.getElementById('counter');
+        const up = document.getElementById('up');
+        const down = document.getElementById('down');
+        const reset = document.getElementById('reset');
+        const inpInput = document.getElementById('inp');
+
+        let count2 = 0;
+        let resetCount = 0;
+
+        function updatecounter() {
+            counter.textContent = count2;
+            if (count2 > 0) {
+                counter.className = 'positive';
+            } else if (count2 < 0) {
+                counter.className = 'negative';
+            } else {
+                counter.className = 'neutral';
+            }
+        }
+
+        function validateinp(inp) {
+            if (inp < 1 || inp > 100) {
+                alert("Enter number beetwen 1-100!");
+                return false;
+            }
+            return true;
+        }
+
+        up.addEventListener('click', () => {
+            const inp = parseInt(inpInput.value, 10);
+            if (validateinp(inp)) {
+                count2 += inp;
+                updatecounter();
+            }
+        });
+
+        down.addEventListener('click', () => {
+            const inp = parseInt(inpInput.value, 10);
+            if (validateinp(inp)) {
+                count2 -= inp;
+                updatecounter();
+            }
+        });
+
+        reset.addEventListener('click', () => {
+            if (count2 === 0) {
+                resetCount++;
+                if (resetCount > 1) {
+                    alert("You can't reset when count === 0!");
+                    return;
+                }
+            } else {
+                resetCount = 0;
+            }
+            count2 = 0;
+            updatecounter();
+        });
+    </script>
+</body>
+</html>

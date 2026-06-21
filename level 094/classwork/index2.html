@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    .nav-container {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      gap: 20px;
+      background-color: #fff;
+      padding: 10px 20px;
+      border: 2px solid #007bff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .nav-item {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #333;
+    }
+    button{
+        border: transparent;
+        cursor: pointer;
+        background-color: transparent;
+        transition: transform 0.2s ease;
+    }
+    button:hover{
+        transform: translateY(-5px);
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-container">
+    <div class="nav-item"><button>Home</button></div>
+    <div class="nav-item"><button>About</button></div>
+    <div class="nav-item"><button>Services</button></div>
+    <div class="nav-item"><button>Contacts</button></div>
+  </nav>
+</body>
+</html>

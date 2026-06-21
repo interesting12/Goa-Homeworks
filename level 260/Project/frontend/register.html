@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GOA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="register-container" id="register-container">
+    <h2>Join Goal Oriented Academy</h2>
+    <form id="register-form">
+        <input type="text" id="first-name" placeholder="First Name" required>
+        <input type="text" id="last-name" placeholder="Last Name" required>
+        <input type="number" id="age" placeholder="Age" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        
+        <div class="checkbox">
+            <label for="gender-male">Male</label>
+            <input type="checkbox" id="gender-male">
+            <label for="gender-female">Female</label>
+            <input type="checkbox" id="gender-female">
+        </div>
+
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+        
+        <button type="submit">Sign Up</button>
+        <p id="password-error" class="error-message" style="display: none;">Password must contain at least one uppercase letter (A-Z) and one number (0-9). Please try again.</p>
+        <p id="password-match-error" class="error-message" style="display: none;">Passwords do not match. Please try again.</p>
+    </form>
+</div>
+
+<div class="message-container" id="message-container" style="display: none;">
+    <p id="success-message">Registration successful! You will be returned to the homepage in</p>
+    <p id="timer" class="timer">5 seconds</p>
+</div>
+
+
+<script>
+    document.getElementById('register-form').addEventListener('submit', async e => {
+    e.preventDefault();
+
+    const data = {
+        firstName: document.getElementById('first-name').value,
+        lastName: document.getElementById('last-name').value,
+        age: document.getElementById('age').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        password: document.getElementById('password').value
+    };
+
+    const res = await fetch('http://localhost:3000/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+        alert('Registered successfully');
+    } else {
+        alert(result.message);
+    }
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.parent{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+}
+
+.div1{
+    transform: rotateX(20px, 1s);
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(224, 211, 211);
+    box-shadow: 2px 2px 10px black;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.btn{
+    background-color: blue;
+    cursor: pointer;
+    border: transparent;
+    width: 20px;
+    height: 20px;
+}

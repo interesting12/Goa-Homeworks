@@ -1,0 +1,50 @@
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 1280px;
+    height: 500px;
+    border: 5px solid black;
+    background-color: rgb(225, 208, 241);
+   
+    
+}
+
+
+
+.child1 {
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYBe1PlH8qLMbgTzlrPz7u_WfmpGDw2rfTiA&s);
+    background-size: cover;
+    
+    border: 3px solid red;
+
+
+}
+
+.child2 {
+    width: 350px;
+    height: 200px;
+    border-radius: 20px;
+    background-image: url(https://www.topgear.com/sites/default/files/news-listicle/image/supraff.jpg);
+    background-size: cover;
+    
+    border: 3px solid red;
+
+
+}
+.child3 {
+    width: 350px;
+    height: 200px;
+    border-radius: 20px;
+    background-image: url(https://images.classic.com/vehicles/d4c7528c6e0d9e3e39716230da79e8c7fdf12250.jpg?ar=16%3A9&fit=crop&w=600);
+    background-size: cover;
+    
+    border: 3px solid red;
+
+
+}
+

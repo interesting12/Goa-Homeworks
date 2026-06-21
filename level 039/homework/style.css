@@ -1,0 +1,44 @@
+.Hello{
+    text-decoration: underline dotted green;
+    text-align: right;
+}
+.World{
+    text-decoration: line-through;
+    text-align: center;
+
+}
+.sd{
+    text-decoration: overline double red;
+}
+.Goal{
+    text-decoration: underline;
+    text-align: center;
+
+}
+.Oriented{
+    text-decoration: line-through dotted green;
+    text-align: right;
+}
+.Academy{
+    text-decoration:line-through;
+
+}
+.is{
+    text-decoration: overline;
+}
+.the{
+    color: green;
+    text-align: right;
+    text-decoration: overline ;
+
+}
+.best{
+    text-transform: uppercase;
+    color: gray;
+    text-align: center;
+    text-decoration: overline;
+}
+.one{
+    text-align: right;
+    text-decoration: underline dotted green;
+}

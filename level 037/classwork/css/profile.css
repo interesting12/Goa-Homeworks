@@ -1,0 +1,135 @@
+body{
+    background-color: #c0c7d0;
+    overflow-x:hidden;
+}
+.navbar{
+    border: 2px solid #fff;
+    display: inline-block;
+    width: 390px;
+    height: 40px;
+   
+    position: relative;
+    left: 450px;
+    box-shadow: 2px 2px 10px #000;
+    border-radius: 5px;
+
+}
+
+
+.home{
+    position: relative;
+    right: 0px;
+    top: 0px;
+    height: 40px;
+    width: 125px;
+    border: none;
+    cursor: pointer;
+    
+    font-size: 14px;
+    
+}
+.home:hover{
+    box-shadow:2px 2px 10px #000 ;
+}
+
+.about{
+    position: relative;
+    left: 125px;
+    top: -40px;
+    height: 40px;
+    width: 130px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+}
+.about:hover{
+    box-shadow:2px 2px 10px #000 ;    
+}
+.contact{
+    position: relative;
+    left: 255px;
+    top: -80px;
+    height: 40px;
+    width: 135px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    
+}
+.contact:hover{
+    box-shadow:2px 2px 10px #000 ;
+}
+
+/* ............................................................ */
+.profile{
+    position: relative;
+    left: 10px;
+    top: -100px;
+    
+}
+.me{
+    border: 2px solid #000;
+    border-radius: 100px;
+    width: 70px;
+    position: relative;
+    top: 120px;
+    left: 350px;
+}
+
+.text{
+    position: relative;
+    top: 100px;
+    left: 450px;
+    border: 2px solid #fff;
+    display: inline-block;
+    border-radius: 12px;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px #fff;
+
+    
+}
+.text p{
+    margin: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* ................................ */
+.github{
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #e4f4e2;
+    display: inline-block;
+    align-items: center;
+    position: relative;
+    top: 120px;
+    left: 420px;
+    width: 500px;
+    height: 270px;
+    box-shadow: 2px 2px 10px #fff;
+}
+.git{
+    width: 250px;
+    margin: 20px;
+    border-radius: 5px;
+    align-items: center;
+    position: relative;
+    left: 100px;
+}
+.github p {
+    margin: 20px;
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+
+a{
+    text-decoration: none;
+    color: #000;
+   
+}
+

@@ -1,0 +1,59 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick = "document.getElementById('myimg').src='pic_bulbon.gif'">turn of</button>
+    <img id="myimg" src="pic_bulboff.gif" style="width:100px">
+    <button onclick="document.getElementById('myimg').src='pic_bulboff.gif'">turn on</button>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p">Hello</p>
+    <button onclick="myfunc()">Click to change paragraph</button>
+
+
+    <script>
+        function myfunc() {
+           document.getElementById('p').innerHTML = 'Text';
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p">user</p>
+    <button onclick="myfunc()">Click me</button>
+    <script>
+        const person = {
+            name : "giorgi",
+            surname: "Shavadze",
+            age: 16,  
+        }
+        let x = "name";
+        let y = "surname";
+        let z = "age";
+        function myfunc () {
+            document.getElementById('p').innerHTML = person[x] + person[y] + "is" + person[z] + "years old";
+        }
+    </script>
+</body>
+</html>

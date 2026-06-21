@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        section{
+            margin-left: 550px;
+            border: 2px solid;
+            width: 400px;
+            height: 400px;
+        }
+        #counter {
+            font-size: 48px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid black;
+            display: inline-block;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .positive {
+            background-color: lightgreen;
+            color: green;
+        }
+        .negative {
+            background-color: lightcoral;
+            color: red;
+        }
+        .neutral {
+            background-color: lightgray;
+            color: black;
+        }
+
+        #btn-s button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        #btn-s button:hover {
+            transform: scale(1.1);
+        }
+        #up {
+            background-color: green;
+            color: white;
+        }
+        #up:hover {
+            background-color: darkgreen;
+        }
+        #down {
+            background-color: red;
+            color: white;
+        }
+        #down:hover {
+            background-color: darkred;
+        }
+        #reset {
+            background-color: gray;
+            color: white;
+        }
+        #reset:hover {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Counter</h1>
+        <div>
+            <p><span id="counter">0</span></p>
+            <div id="btn-s">
+                <button id="up">+</button> <br>
+                <button id="down">-</button><br>
+                <button id="reset">Reset</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const counter = document.getElementById('counter');
+        const up = document.getElementById('up');
+        const down = document.getElementById('down');
+        const reset = document.getElementById('reset');
+
+     
+        let count = 0;
+
+        function updateCounter() {
+            counter.textContent = count;
+            if (count > 0) {
+                counter.className = 'positive';
+            } else if (count < 0) {
+                counter.className = 'negative';
+            } else {
+                counter.className = 'neutral';
+            }
+        }
+
+        up.addEventListener('click', () => {
+            count++;
+            updateCounter();
+        });
+
+        down.addEventListener('click', () => {
+            count--;
+            updateCounter();
+        });
+
+        reset.addEventListener('click', () => {
+            count = 0;
+            updateCounter();
+        });
+    </script>
+</body>
+</html>

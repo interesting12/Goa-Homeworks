@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple People Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Add Person</h1>
+
+    <form id="form">
+        <label>First Name: </label> <br>
+        <input type="text" id="firstname"><br>
+        <label>Last Name: </label><br>
+        <input type="text" id="lastname"><br>
+        <label>Age: </label><br>
+        <input type="number" id="age"><br>
+        <label>ID: </label><br>
+        <input type="text" id="id"><br>
+        <label>Height: </label><br>
+        <input type="number" id="height"><br>
+        <label>Description: </label><br>
+        <input type="text" id="description"><br>
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>People List</h2>
+    <div id="records"></div>
+
+    <script>
+        const form = document.getElementById('form');
+        const recordsDiv = document.getElementById('records');
+
+        const records = JSON.parse(localStorage.getItem('people')) || [];
+
+        const updateRecords = () => {
+            localStorage.setItem('people', JSON.stringify(records));
+            recordsDiv.innerHTML = '';
+            records.forEach(person => {
+                const p = document.createElement('p');
+                p.textContent = `${person.firstName} ${person.lastName}, Age: ${person.age}, ID: ${person.id}, Height: ${person.height} cm, Description: ${person.description}`;
+                recordsDiv.appendChild(p);
+            });
+        };
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const person = {
+                firstName: document.getElementById('firstname').value,
+                lastName: document.getElementById('lastname').value,
+                age: document.getElementById('age').value,
+                id: document.getElementById('id').value,
+                height: document.getElementById('height').value,
+                description: document.getElementById('description').value
+            };
+
+            records.push(person);
+            updateRecords();
+            form.reset();
+        });
+
+        updateRecords();
+    </script>
+</body>
+</html>

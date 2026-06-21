@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fade In/Out</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+  </style>
+</head>
+<body>
+  <button id="toggleBtn">Toggle Fade</button>
+  <div id="box"></div>
+  <script>
+    const box = document.getElementById("box");
+    const button = document.getElementById("toggleBtn");
+    let visible = false;
+
+    button.addEventListener("click", () => {
+      visible = !visible;
+      box.style.opacity = visible ? "1" : "0";
+    });
+  </script>
+</body>
+</html>

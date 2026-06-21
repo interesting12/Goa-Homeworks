@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ასაკის შემოწმება</title>
+</head>
+<body>
+    <h2>ასაკის შემოწმება</h2>
+    <button onclick="checkAge()">ჩამოაყალიბეთ ასაკი</button>
+
+
+    <script>
+        function checkAge() {
+            const age = 17; 
+            
+            if (age >= 18) {
+                console.log("თქვენ სრულწლოვანი ხართ.");
+                alert("თქვენ სრულწლოვანი ხართ.");
+            } else {
+                const yearsLeft = 18 - age;
+                console.log(`თქვენ ჯერ არ ხართ სრულწლოვანი. ${yearsLeft} წელი გაკლიათ.`);
+                alert(`თქვენ ჯერ არ ხართ სრულწლოვანი. ${yearsLeft} წელი გაკლიათ.`);
+            }
+        }
+    </script>
+</body>
+</html>

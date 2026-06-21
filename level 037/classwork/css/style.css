@@ -1,0 +1,81 @@
+body{
+    background-color: #ace2ff;
+}
+.main{
+    border: 3px solid #000;
+    border-radius: 14px;
+    background-color: #008cff;
+    display: inline-block;
+    padding: 180px 130px;
+    position: relative;
+    left: 450px;
+    top: 80px;
+}
+.me{
+    border: 3px solid #000;
+    border-radius: 100px;
+    width: 70px;
+    position: relative;
+    top: -47px;
+}
+.info{
+    border: 3px solid #000;
+    border-radius: 10px;
+    background-color: #5dd442;
+    display: inline-block;
+    position: relative;
+    top: 240px;
+    left: 104px;
+    width: 337px;
+    height: 230px;
+}
+.fulname{
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    top: -20px;
+    border: 2px solid #000;
+        
+}
+
+
+.full{
+    font-size: 13px;
+    position: relative;
+    top: -20px;
+    
+    font-weight: bold;
+    text-align: center;
+}
+.developer{
+    font-size: 18px;
+    position: relative;
+    top: -30px;
+   
+    font-weight: bold;
+    text-align: center;
+}
+.button{
+    border: 3px solid #008cff;
+    border-radius: 8px;
+    display: inline-block;
+    width: 120px;
+    height: 35px;
+    position: relative;
+    left: 105px;
+    top: -20px;
+    background: #008cff;
+    box-shadow: 2px 2px 10px #000;
+    
+}
+.btn a{
+    text-decoration: none;
+    color: #000;
+}
+.mail p{
+    text-align: center;
+    position: relative;
+    top: 10px;
+
+}

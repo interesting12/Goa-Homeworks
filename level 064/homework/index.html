@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>რეგისტრაციის ფორმა</title>
+    <script>
+        const dateBase = [];
+
+        function register() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+
+            if (password.length < 8) {
+                alert("Password is too short");
+                return; 
+            }
+            if (!gender) {
+                alert("გთხოვთ, აირჩიოთ სქესი.");
+                return; 
+            }
+            const userData = {
+                name: name,
+                email: email,
+                password: password,
+                gender: gender.value
+            };
+            dateBase.push(userData);
+
+            console.log(dateBase);
+            alert("რეგისტრაცია წარმატებით დასრულდა!");
+        }
+    </script>
+</head>
+<body>
+    <h2>რეგისტრაციის ფორმა</h2>
+    <form onsubmit="event.preventDefault(); register();">
+        <label for="name">სახელი:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">ელ. ფოსტა:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">პაროლი:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label>სქესი:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">კაცი</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">ქალი</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">სხვა</label><br><br>
+
+        <button type="submit">რეგისტრაცია</button>
+    </form>
+</body>
+</html>

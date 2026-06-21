@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Scheduling System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input {
+            margin: 5px 0;
+            padding: 5px;
+        }
+        button {
+            margin: 5px 0;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Message Input and Scheduling</h1>
+    <div>
+        <label for="message">Message: </label>
+        <input type="text" id="message" placeholder="Enter message">
+    </div>
+    <div>
+        <label for="time">Time in milliseconds: </label>
+        <input type="number" id="time" placeholder="Time in ms">
+    </div>
+    <button onclick="scheduleMessage()">Add Message</button>
+    
+    <div id="output"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

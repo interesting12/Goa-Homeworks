@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+<body>
+      
+   
+        <form id="userForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" required>
+            <br>
+    
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" required>
+            <br>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <br><br>
+    
+            <button type="button" onclick="addUser()">Add User</button>
+        </form>
+        <table border="1" id="userTable">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
+
+
+    <script src="cw.js"></script>
+</body>
+</html>

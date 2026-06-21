@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 50px;
+}
+.emails-output, .emails-input {
+    width: 50%;
+    background-color: #f5ebc2;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    background: #a6c1f3;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    height: 500px;
+    border: 2px solid black;
+}
+
+#applyFilter{
+    cursor:pointer;
+    padding:6px 25px;
+    border-radius: 2px;
+    border:none;
+    background-color: #60a9fd;
+}
+
+#applyFilter:hover{
+    background-color: #4197fa;
+}
+
+#filter{    
+    padding: 6px 30px; 
+}

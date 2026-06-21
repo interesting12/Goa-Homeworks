@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+  }
+  #game-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #ddd;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  #cookie {
+    width: 100px;
+    height: 100px;
+    font-size: 16px;
+    border-radius: 50%;
+    background-color: #f1c40f;
+    border: 2px solid #e67e22;
+    cursor: pointer;
+  }
+  #gadgets button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #gadgets button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+  }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Cookie Clicker</h1>
+        <div id="score-board">
+          <p>Cookies: <span id="cookies">0</span></p>
+          <p>Gold: <span id="gold">0</span></p>
+        </div>
+        <div id="cookie-container">
+          <button id="cookie">Click Me!</button>
+        </div>
+        <div id="gadgets">
+          <h2>Gadgets</h2>
+          <button id="bigger-finger">Bigger Finger (50 Gold)</button>
+          <button id="better-mines">Better Mines (100 Cookies)</button>
+          <button id="double-cookies">Double Cookies (200 Gold)</button>
+        </div>
+      </div>
+    <script src="script.js"></script>
+</body>
+</html>

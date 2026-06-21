@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dcument</title>
+</head>
+<body>
+    <input type="text" id="text">
+    <p>Character count: <span id="count">0</span></p>
+
+    <script>
+        const input = document.getElementById('text');
+        const count = document.getElementById('count');
+
+        input.addEventListener('input', function() {
+            count.textContent = input.value.length;
+        });
+    </script>
+</body>
+</html>

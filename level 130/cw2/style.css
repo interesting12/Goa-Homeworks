@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+}
+.container {
+--border-size: 3px;
+--border-angle: 0turn;
+width: 670px;
+height: 200px;
+background-image: conic-gradient(from var(--border-angle), #dce1cc, #dce1cc 50%, #dce1cc), conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
+background-position: center center;
+background-repeat: no-repeat;
+-webkit-animation: bg-spin 3s linear infinite;
+    animation: bg-spin 3s linear infinite;
+}
+@-webkit-keyframes bg-spin {
+to {
+--border-angle: 1turn;
+}
+}
+@keyframes bg-spin {
+to {
+--border-angle: 1turn;
+}
+}
+
+@property --border-angle {
+syntax: "<angle>";
+inherits: true;
+initial-value: 0turn;
+}
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #cbe43d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover{
+    transition:0.3s;
+    --border-size: 3px;
+--border-angle: 0turn;
+padding: 10px 20px;
+background-image: conic-gradient(from var(--border-angle), #cbe43d, #cbe43d 50%, #cbe43d), conic-gradient(from var(--border-angle), transparent 20%, rgb(39, 146, 148), rgb(156, 177, 41));
+background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
+background-position: center center;
+background-repeat: no-repeat;
+-webkit-animation: bg-spin 3s linear infinite;
+    animation: bg-spin 3s linear infinite;
+}
+button:hover {
+    background-color: #5fb050;
+}

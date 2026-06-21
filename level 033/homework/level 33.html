@@ -1,0 +1,70 @@
+<!--  2) კომენტარების გამოყენებით ახსენით რა არის და როგორ გამოიყენება css 
+# css -არის ტექნოლოგია რომელიც გამოიყენება html-ს და js-ს თან ერთად, ის ალამაზებს და სტილს ანიჭებს ვებსაიტს
+
+
+3) ახსენით რა განსხვავებაა inline, internal და external css-ის კოდის წერის ტექნიკებს შორის. 
+დაწერეთ თითოეულის დადებითი მხარეც. შეგიძლიათ ონლაინ რესურსების გამოყენებაც. 
+
+# inline - ტექნიკა გამოიყენება და მოქმედებს მხოლოდ ერთ ელემნზე, 
+# internal - ტექნიკა გამოიყენება html დოკუმენტში css- ის გასააწერად, და ეხება ყველა იმ ელემენტს რომელსაც მივანიჭებთ სტილს
+# external ტექნიკა რომელიც ცალკე css-ს ფაილში კეთდება და შემდეგ უკავშრდება html-ს დოკუმენტს 
+
+8) კომენტარების გამოყენებით ახსენით რა არის კუთვნილება, მნიშვნელობა და css-ის დეკლარაცია
+# მაგ კუთვნილება/property - color, მნიშვნელობა/value - red
+# css დეკლარაცია ეწოდება სრულად ჩაწერილ css-ს სტრუქტურას მაგ: style = "background-color: red;"
+
+
+9: კომენტარის გამოყენებით ახსენით თუ როგორ მუშაობს შემდეგი კუთვნილებები: color, background-color, font-size, font-weight, text-align
+# color - ტექსტს უცვლის ფერს 
+# background-color - ცვლის ელემენტის უკანა ფონს
+# font-size - ცვლის ტექსტის ზომას
+# font-weight - ცვლის ტექსტის სისქეს
+# text-align - ცვლის ტექსტის განლაგებას
+
+
+
+10: გამოიყენეთ ყველა ნასწავლი html თეგი, ასევე დაამატეთ დღეს ნასწავლი css-ის კუთვნილებები და გააუმჯობესეთ თქვენი
+პორტფოლიო (საიტი შენს შესახებ) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georg</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        p{
+            text-align: center;
+        }
+        img{
+            position: relative ;  left:490px ;
+        }
+    </style>
+</head>
+<body>
+    <p>My profile</p>
+   
+    <!-- navigation bar -->
+    <nav id="navbar" class="navbar">
+        <div class="logo"><i> George</i></div>
+        <ul class="nav-links">
+            <li><a href="level 33.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#services" class="dropbtn">My projects</a>
+                <div class="dropdown-content">
+                    <a href="https://github.com/interesting12">GitHub</a>
+                </div>  
+        </ul>
+    </nav>
+
+    <!-- home -->
+    <h2 style="text-align: center;">hello i'm George</h2>
+    <p>i'm study in <span style="color: green;"> Goal oriented academy</span></p>
+    <p style="color: rgb(35, 117, 240);">i want become a web developer, i need to work a lot for this, i never give up and i become CHAD </p>
+    <p style="color: gray;">I write codes, make projects and upload them to github</p>
+    <img src="github.png" alt="my github profile" width="500px"
+    style="border: solid rgb(90, 90, 90) 8px; ">
+    <p style="background-color: rgb(198, 27, 27); font-size: 30px;">i love GOA</p>
+</body>
+</html>

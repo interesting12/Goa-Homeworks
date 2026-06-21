@@ -1,0 +1,236 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Light Mode */
+body.light {
+  background-color: #f0f0f0;
+}
+
+body.light .app {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.light .input-group label {
+  color: #2d3748;
+}
+
+body.light .input-group input {
+  background-color: #ffffff;
+  color: #2d3748;
+  border-color: #cbd5e0;
+}
+
+body.light .cell {
+  background-color: #ffffff;
+}
+
+body.light .color-picker label,
+body.light .border-picker label {
+  color: #2d3748;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #131313;
+}
+
+body.dark .app {
+  background-color: #1d1d1e;
+  border: 1px solid #4a5568;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .input-group label {
+  color: #f7fafc;
+}
+
+body.dark .input-group input {
+  background-color: #4a5568;
+  color: #f7fafc;
+  border-color: #718096;
+}
+
+body.dark .cell {
+  background-color: #4a5568;
+}
+
+body.dark .color-picker label,
+body.dark .border-picker label {
+  color: #f7fafc;
+}
+
+.app {
+  width: 90%;
+  width: 150vh;
+  max-width: 1200px;
+  min-height: 80vh;
+  padding: 40px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.input-group input {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 120px;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #718096;
+}
+
+.theme-toggle, .eraser-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.theme-toggle {
+  background-color: #718096;
+  color: white;
+  margin-left: 500px;
+}
+
+.theme-toggle:hover {
+  background-color: #4a5568;
+}
+
+.eraser-btn {
+  background-color: #a0aec0;
+  color: white;
+  font-size: 16px;
+}
+
+.eraser-btn:hover:not(:disabled) {
+  background-color: #718096;
+}
+
+.eraser-btn:disabled {
+  background-color: #cbd5e0;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.color-picker,
+.border-picker {
+  margin-bottom: 25px;
+  border-radius: none;
+  display: flex;
+  align-items: center;
+}
+
+.color-picker label,
+.border-picker label {
+  font-weight: 600;
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+.color-picker input[type="color"],
+.border-picker input[type="color"] {
+  width: 60px;
+  height: 60px;
+  border: transparent;
+  cursor: pointer;
+}
+
+.predefined-colors,
+.border-colors {
+  display: flex;
+  gap: 12px;
+  margin-top: 0px;
+  margin-left: 50px;
+  flex-wrap: wrap;
+}
+
+.color-btn,
+.border-color-btn {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.color-btn:hover,
+.border-color-btn:hover {
+  transform: scale(1.05);
+}
+
+.action-buttons {
+  margin-bottom: 25px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  gap: 3px;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #cbd5e0;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+.cell:hover {
+  border-color: #718096;
+}
+
+.cell.selected {
+  border-color: #f39c12;
+  border-width: 3px;
+}

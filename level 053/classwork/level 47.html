@@ -1,0 +1,41 @@
+`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+        }
+        div{
+            transition: transform 0.5s ease-in 0.2s;
+            transition-property: background-color, transform; 
+            transition-duration: 0.5s, 0.3s;                 
+            transition-timing-function: ease-in, ease-out;  
+            transition-delay: 0s, 0.2s;   
+        }
+        div:hover{
+            background-color: beige;
+            /* transform: rotateY(50deg); გადაატრიეალებს ჩვენს div ბლოკს Y- ღერძზე
+            transform: translate(50px, 20px); გადაიტანს ჩვენს div ბლოკს 50px -ით X ღერძზე და 20px -ით Y ღერძზე
+            transform-origin: 100px 50px; 
+            /* transform: scale(2);  გაადიდებს ჩვენს div ბლოკს*/
+            /* transform: skew(30deg, 10deg); გადააატრიალებს ჩვენს div ბლოკს */
+            transform: scale(2);
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>hello</h1>
+        <button>click me</button>
+    </div>
+</body>
+</html>

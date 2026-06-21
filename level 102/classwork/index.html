@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter </h1>
+    <h2 id="counterDisplay">0</h2>
+    <button id="incrementBtn">ინკრემენტაცია</button>
+    <button id="decrementBtn">დიკრემენტაცია</button>
+    <button id="resetBtn">Reset</button>
+
+    <script>
+        const counterDisplay = document.getElementById('counterDisplay');
+        const incrementBtn = document.getElementById('incrementBtn');
+        const decrementBtn = document.getElementById('decrementBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        let counter = parseInt(localStorage.getItem('counter')) || 0;
+        counterDisplay.textContent = counter;
+
+        const updateCounter = (newCounter) => {
+            counter = newCounter;
+            localStorage.setItem('counter', counter);
+            counterDisplay.textContent = counter;
+        };
+
+        incrementBtn.addEventListener('click', () => {
+            updateCounter(counter + 1);
+        });
+
+        decrementBtn.addEventListener('click', () => {
+            updateCounter(counter - 1);
+        });
+
+        resetBtn.addEventListener('click', () => {
+            updateCounter(0);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    background-color: #b3e69c; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 2px solid;
+    box-sizing: border-box;
+}
+
+.blue {
+    width: 90%;
+    height: 90%;
+    border-color: #00aaff; 
+}
+
+.green {
+    width: 75%;
+    height: 75%;
+    border-color: #b3e69c;
+}
+
+.black {
+    width: 55%;
+    height: 55%;
+    border-color: black;
+}
+
+.pink {
+    width: 40%;
+    height: 40%;
+    border-color: #d78aff; 
+}
+
+.cyan {
+    width: 25%;
+    height: 25%;
+    border-color: #4adcf9; 
+}

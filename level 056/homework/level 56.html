@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>სურათის ცვლა ღილაკების საშუალებით</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+            border: 5px solid #3498db;
+            border-radius: 10px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<img id="image" src="https://i.pinimg.com/736x/82/b9/ef/82b9ef5c3f51a72db5308224920ce91d.jpg" alt="Image">
+
+<button onclick="changeImage('https://th.bing.com/th/id/OIP.cBcYVOLtIsM1O4LwZV8skAAAAA?rs=1&pid=ImgDetMain')">Next</button>
+<button onclick="changeImage('https://i.pinimg.com/originals/ca/9d/99/ca9d99cbbee44ecccf12a4d3ff40035a.jpg')">Pevorus</button>
+
+
+<script>
+    function changeImage(src) {
+        document.getElementById('image').src = src;
+    }
+</script>
+
+</body>
+</html>

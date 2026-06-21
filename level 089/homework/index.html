@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Example</title>
+  <style>
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      margin: 20px;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+    .card-body {
+      padding: 16px;
+    }
+    .card-title {
+      font-size: 1.5em;
+      margin: 0 0 8px;
+    }
+    .card-text {
+      font-size: 1em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<div id="card-container"></div>
+
+<script>
+  const cards = [
+    { title: 'Card 1', text: 'This is the first card.', imageUrl: 'https://cdn.pixabay.com/photo/2014/07/31/23/00/wristwatch-407096_640.jpg' },
+    { title: 'Card 2', text: 'This is the second card.', imageUrl: 'https://cdn.pixabay.com/photo/2022/12/14/16/10/ediffice-7655723_640.jpg' },
+    { title: 'Card 3', text: 'This is the third card.', imageUrl: 'https://cdn.pixabay.com/photo/2021/07/01/05/59/wristwatch-6378360_640.jpg' },
+    { title: 'Card 4', text: 'This is the fourth card.', imageUrl: 'https://cdn.pixabay.com/photo/2020/11/21/19/43/watch-5764987_640.jpg' }
+  ];
+
+
+  function createCard(title, text, price, imageUrl) {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    card.appendChild(img);
+
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
+
+    const cardTitle = document.createElement('h2');
+    cardTitle.className = 'card-title';
+    cardTitle.textContent = "Wristwatch Watch";
+    cardBody.appendChild(cardTitle);
+
+    const cardText = document.createElement('p');
+    cardText.className = 'card-text';
+    cardText.textContent = " Lorem ipsum, dolor sit amet consectetur adipisicing elitOfficia sapiente saepe tempore est aliquam assumenda, delectus, quod libero";
+    cardBody.appendChild(cardText);
+
+    const cardPrice = document.createElement('h2');
+    cardPrice.className = 'card-price';
+    cardPrice.textContent = "$200";
+    cardBody.appendChild(cardPrice);
+
+    card.appendChild(cardBody);
+    document.getElementById('card-container').appendChild(card);
+  }
+
+  for (let i = 0; i < cards.length; i++) {
+    createCard(cards[i].title, cards[i].text, cards[i].imageUrl);
+  }
+    
+
+  createCard('Card Title', 'This is a description for the card.', 'https://cdn.pixabay.com/photo/2022/12/14/16/10/ediffice-7655723_640.jpg');
+</script>
+
+</body>
+</html>

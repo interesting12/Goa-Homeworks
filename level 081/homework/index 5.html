@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide In</title>
+  <style>
+    #block {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      position: absolute;
+      top: 50%;
+      left: -120px;
+      transition: left 1s;
+    }
+  </style>
+</head>
+<body>
+  <button id="slideBtn">Slide In/Out</button>
+  <div id="block"></div>
+  <script>
+    const block = document.getElementById("block");
+    const slideBtn = document.getElementById("slideBtn");
+    let isOut = true;
+
+    slideBtn.addEventListener("click", () => {
+      block.style.left = isOut ? "10px" : "-120px";
+      isOut = !isOut;
+    });
+  </script>
+</body>
+</html>

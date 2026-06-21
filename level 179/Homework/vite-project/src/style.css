@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.auth-form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.error {
+  color: #e74c3c;
+  margin-bottom: 15px;
+}
+
+.counter {
+  margin: 30px 0;
+}
+
+.count-display {
+  font-size: 48px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.counter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+.user-info {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.user-info p {
+  margin: 5px 0;
+}

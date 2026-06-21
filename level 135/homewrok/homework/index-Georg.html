@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="auth-section">
+    <h2>Register / Login</h2>
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button id="registerBtn">Register</button>
+    <button id="loginBtn">Login</button>
+  </div>
+
+  <div id="store-section" style="display:none;">
+    <h2>Welcome to the Store!</h2>
+    <div id="products-container"></div>
+    <h3>🛒 Cart</h3>
+    <div id="cart-items"></div>
+    <strong>Total: ₾<span id="total-price">0</span></strong>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

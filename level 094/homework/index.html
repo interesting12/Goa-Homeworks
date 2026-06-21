@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f8f8;
+        }
+
+        .container {
+        display: grid;
+        gap: 10px;
+        width: 90%;
+        max-width: 1200px;
+        }
+        .header {
+        background-color: #ff3e8e;
+        height: 100px;
+        }
+
+
+        .grid {
+        display: grid;
+        gap: 10px;
+        }
+
+        .box {
+        background-color: #ff73a5;
+        height: 100px;
+        }
+        /* desktop */
+        @media (min-width: 1024px) {
+        .container {
+            grid-template-rows: auto 1fr;
+        }
+        .grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        }
+
+        /* tablet */
+        @media (max-width: 1023px) and (min-width: 768px) {
+        .container {
+            grid-template-rows: auto 1fr;
+        }
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        }
+         /* phone */
+        @media (max-width: 760px) {
+        .container {
+            grid-template-rows: auto 1fr;
+        }
+        .grid {
+            grid-template-columns: 1fr;
+        }
+        }
+
+    </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="header"></div>
+    <div class="grid">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving Ball</title>
+  <style>
+    #ball {
+      width: 50px;
+      height: 50px;
+      background-color: green;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <button id="moveBallBtn">Move Ball</button>
+  <div id="ball"></div>
+  <script>
+    const ball = document.getElementById("ball");
+    let position = 0;
+    let direction = 1;
+
+    function moveBall() {
+      position += direction * 5;
+      ball.style.left = `${position}px`;
+      if (position >= window.innerWidth - 50 || position <= 0) {
+        direction *= -1;
+      }
+      requestAnimationFrame(moveBall);
+    }
+
+    document.getElementById("moveBallBtn").addEventListener("click", moveBall);
+  </script>
+</body>
+</html>
